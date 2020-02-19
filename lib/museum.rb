@@ -25,5 +25,15 @@ class Museum
 
   def admit(patron_name)
     @patrons << patron_name
-  end   
+  end
+
+  def patrons_by_exhibit_interest
+    patrons_by_exhibit_interest = {}
+
+
+    @exhibits.each do |exhibit|
+      patrons_by_exhibit_interest[exhibit] = patrons.find_all{ |patrons| interests.include?(exhibit) }
+    end
+    patrons_by_exhibit_interest
+  end
 end

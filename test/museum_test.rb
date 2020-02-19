@@ -92,6 +92,10 @@ class MuseumTest < Minitest::Test
     dmns.add_exhibit(gems_and_minerals)
     dmns.add_exhibit(imax)
 
+    dmns.admit(patron_1)
+    dmns.admit(patron_2)
+    dmns.admit(patron_3)
+
     patron_1.add_interest("Dead Sea Scrolls")
     patron_1.add_interest("Gems and Minerals")
     patron_2.add_interest("Dead Sea Scrolls")
