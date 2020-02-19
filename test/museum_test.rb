@@ -40,13 +40,17 @@ class MuseumTest < Minitest::Test
     patron_1 = Patron.new("Bob", 20)
     patron_2 = Patron.new("Sally", 20)
 
+    dmns.add_exhibit(dead_sea_scrolls)
+    dmns.add_exhibit(gems_and_minerals)
+    dmns.add_exhibit(imax)
+
     patron_1.add_interest("Dead Sea Scrolls")
     patron_1.add_interest("Gems and Minerals")
     patron_2.add_interest("IMAX")
 
     assert_equal [dead_sea_scrolls, gems_and_minerals], dmns.recommend_exhibits(patron_1)
     assert_equal [imax], dmns.recommend_exhibits(patron_2)
-  end   
+  end
 
 
 
